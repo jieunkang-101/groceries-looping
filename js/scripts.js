@@ -9,12 +9,16 @@ $(document).ready(function() {
   
   console.log(groceries);
 
+  $("#hide").hide();
+
   var userInputUpperCases = groceries.map(function(grocery) {
     return grocery.toUpperCase();
-  
   });
 
-  $("#userOutput").append("<li>" + userInputUpperCases[0] + "</li>");
+  var userInputInOrder = userInputUpperCases.sort();
+  
+
+  $("#userOutput").append("<li>" + userInputInOrder[0] + "</li>");
   $("#userOutput").append("<li>" + userInputUpperCases[1] + "</li>");
   $("#userOutput").append("<li>" + userInputUpperCases[2] + "</li>");
   event.preventDefault();  
